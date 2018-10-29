@@ -111,6 +111,7 @@ body {
 }
 
 dialog {
+  display: none;
   padding: 10px;
   width: 320px;
   background: whitesmoke;
