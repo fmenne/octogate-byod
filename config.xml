@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="de.octogate.byod" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>OctoGate BYOD</name>
+    <description>
+        Bring your own device (BYOD) App for OctoGate.
+    </description>
+    <author email="fwolbring@octogate.de" href="http://octogate.de">
+        OctoGate IT Security Systems GmbH
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <platform name="android">
+        <allow-intent href="market:*" />
+        <icon density="ldpi" height="36" platform="android" src="res/icon/android/icon-36-ldpi.png" width="36" />
+        <icon density="mdpi" height="48" platform="android" src="res/icon/android/icon-48-mdpi.png" width="48" />
+        <icon density="hdpi" height="72" platform="android" src="res/icon/android/icon-72-hdpi.png" width="72" />
+        <icon density="xhdpi" height="96" platform="android" src="res/icon/android/icon-96-xhdpi.png" width="96" />
+    </platform>
+    <platform name="ios">
+        <allow-intent href="itms:*" />
+        <allow-intent href="itms-apps:*" />
+    </platform>
+    <engine name="android" spec="^7.1.1" />
+</widget>

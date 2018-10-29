@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+
+<head>
+  <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: 'unsafe-eval' gap: https://ssl.gstatic.com; script-src 'self' data: 'unsafe-eval' 'sha256-//EpknlGOwA2ZUGD53DvJrg0dV/dkHepzV7oWUgancc=' gap: https://ssl.gstatic.com; style-src 'self' 'unsafe-inline' ; img-src 'self' data: content: https://api.statvoo.com/; connect-src * 127.0.0.1:5500; media-src * ;">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="format-detection" content="telephone=no">
+  <meta name="msapplication-tap-highlight" content="no">
+  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+  <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="css/index.css">
+  <title>OctoGate BYOD</title>
+</head>
+
+<body>
+  <script type="text/javascript" src="cordova.js"></script>
+  <script type="text/javascript" src="js/storage.js"></script>
+  <script type="text/javascript" src="js/certificate.js"></script>
+  <script type="text/javascript" src="js/checklist.js"></script>
+
+  <script type="text/javascript" src="js/checks.js"></script>
+  <script type="text/javascript" src="js/userinfo.js"></script>
+  <script type="text/javascript" src="js/login.js"></script>
+  <script type="text/javascript" src="js/linklist.js"></script>
+
+  <dialog id="import_error">
+    <form method="dialog">
+      <p>Das OctoGate Stammzertifikat, was benötigt wird, um auf HTTPS geschützen Seiten zu Surfen, konnte nicht
+        importiert werden.</p>
+      <p>Bitte klicken Sie auf Wiederholen, um die Installation erneut zu versuchen, oder auf Abbrechen, um ohne
+        zertifikat fortzufahren.</p>
+      <menu>
+        <button id="import_retry" name="retry" value="retry">Wiederholen</button>
+        <button id="import_cancel" name="cancel" value="cancel">Abbrechen</button>
+      </menu>
+    </form>
+  </dialog>
+
+  <dialog id="owner_check">
+    <form method="dialog">
+      <p>Ist dieses Gerät Schuleigentum?</p>
+      <menu>
+        <button id="owner_school" name="owner" value="school">Ja</button>
+        <button id="owner_user" name="owner" value="user">Nein</button>
+      </menu>
+    </form>
+  </dialog>
+
+  <dialog id="invalid_device">
+    <form method="dialog">
+      <p>Diese App kann nur in verbindung mit einem gültigen OctoGate Accesspoint benutz werden.</p>
+      <p>Bitte stellen Sie sicher, das Sie mit dem richtigen Accesspoint verbunden sind,
+         und dieser ein gültiger OctoGate Accesspoint ist.</p>
+    </form>
+  </dialog>
+
+  <div class="pagewrapper" id="content">
+    <header>
+      <img src="img/logo.png">
+    </header>
+    <div class="widget-container">
+      <ul class="checklist"></ul>
+      <div class="login-form login-form--hidden">
+        <div class="login-error">Die eingegebenen Benutzerdaten sind falsch.</div>
+        <label for="username">Benutzername</label>
+        <input type="text" id="username" name="username">
+        <label for="password">Passwort</label>
+        <input type="password" id="password" name="password">
+        <button id="login">Login</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="app-wrapper app--init">
+    <ul class="app-header">
+      <li>
+        <button class="menu-button" id="menu-btn">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </li>
+      <li>OctoGate</li>
+      <li class="spacer"></li>
+    </ul>
+    <div class="content-wrapper">
+      <ul id="side-menu">
+        <li><a href="#">Logout</a></li>
+      </ul>
+      <div id="app-content">
+        <div class="dark"></div>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="js/index.js"></script>
+</body>
+
+</html>
