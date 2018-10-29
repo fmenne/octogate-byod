@@ -13,12 +13,16 @@
         "cordova-android": "^7.1.1",
         "cordova-ios": "^4.5.5",
         "cordova-plugin-add-swift-support": "^1.7.2",
-        "cordova-plugin-inappbrowser": "^3.0.0"
+        "cordova-plugin-inappbrowser": "^3.0.0",
+        "cordova-plugin-wifiinfo": "git+https://github.com/fwolle30/cordova-plugin-wifiinfo.git",
+        "octogate-plugin-certlist": "git+https://github.com/fmenne/octogate-plugin-certlist.git"
     },
     "cordova": {
         "plugins": {
             "cordova-plugin-add-swift-support": {},
-            "cordova-plugin-inappbrowser": {}
+            "cordova-plugin-inappbrowser": {},
+            "cordova-plugin-wifiinfo": {},
+            "de.octogate.certlist": {}
         },
         "platforms": [
             "android"
