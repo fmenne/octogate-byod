@@ -12,9 +12,9 @@ CheckList.addTask('check_wifi_ap', CheckList.E_TASK_TYPE.REQUIRED, "Prüfe Netzw
     if (match) {
       done(true, 'network_valid');
     } else {
-      var dialog = document.getElementById('invalid_device');
-      alert (dialog.innerHTML);
-      // dialog.showModal();
+      var dialog = dialogFix(document.getElementById('invalid_device'));
+      dialog.showModal();
+
       done(false, 'network_invalid');
     }
   })
@@ -29,7 +29,7 @@ CheckList.addTask('check_owner', CheckList.E_TASK_TYPE.OPTIONAL, "Prüfe Besitze
   var owner = localStorage.getItem('device_owner');
 
   if (!owner) {
-    var dialog = document.getElementById('owner_check');
+    var dialog = dialogFix(document.getElementById('owner_check'));
 
     dialog.onclose = function (event) {
       var resultValue = event.target.returnValue;
@@ -37,7 +37,7 @@ CheckList.addTask('check_owner', CheckList.E_TASK_TYPE.OPTIONAL, "Prüfe Besitze
       done(true, resultValue);
     }
     setTimeout(() => {
-      //dialog.showModal()
+      dialog.showModal();
       alert (dialog.innerHTML);
     }, 500);
   } else {
@@ -48,7 +48,7 @@ CheckList.addTask('check_owner', CheckList.E_TASK_TYPE.OPTIONAL, "Prüfe Besitze
 CheckList.addTask('check_cert', CheckList.E_TASK_TYPE.OPTIONAL, "Prüfe Stammzertifikat", (done) => {
   checkCertificate(true).then((result) => {
     if (!result) {
-      var dialog = document.getElementById('import_error');
+      var dialog = dialogFix(document.getElementById('import_error'));
 
       dialog.onclose = function (e) {
         if (e.target.returnValue === "retry") {
@@ -60,8 +60,7 @@ CheckList.addTask('check_cert', CheckList.E_TASK_TYPE.OPTIONAL, "Prüfe Stammzer
           setTimeout(() => done(false, 'cert_invalid'), 500);
         }
       };
-      // dialog.showModal();
-      alert (dialog.innerHTML);
+      dialog.showModal();
     } else {
       setTimeout(() => done(result, result ? 'cert_valid' : 'cert_invalid'), 500);
     }
