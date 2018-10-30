@@ -40,7 +40,6 @@ CheckList.addTask('check_owner', CheckList.E_TASK_TYPE.OPTIONAL, "Prüfe Besitze
     }
     setTimeout(() => {
       dialog.showModal();
-      alert (dialog.innerHTML);
     }, 500);
   } else {
     setTimeout(() => done(true, owner), 500);
