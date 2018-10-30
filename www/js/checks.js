@@ -4,8 +4,8 @@ CheckList.addTask('check_wifi_ap', CheckList.E_TASK_TYPE.REQUIRED, "Prüfe Netzw
     '52:a5:ef'
   ];
 
-  wifi = networkinterface; //.getNetworkInfo
-  wifi.getNetworkInfo((result) => {
+  wifi = WifiInfo; //.getNetworkInfo
+  wifi.getConnectedSSID((result) => {
     // var conn = result.connection || { bssid: '' };
     // var bssid = conn.bssid.substr(0, 8).toLowerCase();
     // var match = allowed_macs.find((mac) => bssid.localeCompare(mac) === 0);
