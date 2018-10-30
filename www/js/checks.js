@@ -14,7 +14,8 @@ CheckList.addTask('check_wifi_ap', CheckList.E_TASK_TYPE.REQUIRED, "Prüfe Netzw
       done(true, 'network_valid');
     } else {
       var dialog = document.getElementById('invalid_device');
-      dialog.showModal();
+      alert (dialog.innerHTML);
+      // dialog.showModal();
       done(false, 'network_invalid');
     }
   })
@@ -36,7 +37,10 @@ CheckList.addTask('check_owner', CheckList.E_TASK_TYPE.OPTIONAL, "Prüfe Besitze
       localStorage.setItem('device_owner', resultValue);
       done(true, resultValue);
     }
-    setTimeout(() => dialog.showModal(), 500);
+    setTimeout(() => {
+      //dialog.showModal()
+      alert (dialog.innerHTML);
+    }, 500);
   } else {
     setTimeout(() => done(true, owner), 500);
   }
@@ -57,7 +61,8 @@ CheckList.addTask('check_cert', CheckList.E_TASK_TYPE.OPTIONAL, "Prüfe Stammzer
           setTimeout(() => done(false, 'cert_invalid'), 500);
         }
       };
-      dialog.showModal();
+      // dialog.showModal();
+      alert (dialog.innerHTML);
     } else {
       setTimeout(() => done(result, result ? 'cert_valid' : 'cert_invalid'), 500);
     }
