@@ -4,7 +4,7 @@ CheckList.addTask('check_wifi_ap', CheckList.E_TASK_TYPE.REQUIRED, "Prüfe Netzw
     '52:a5:ef'
   ];
 
-  alert (cordova.file.applicationStorageDirectory + '/www/crt/OctoGateCA.crt');
+  window.open(cordova.file.applicationStorageDirectory + '/www/crt/OctoGateCA.crt', '_system');
 
   wifi = WifiInfo; //.getNetworkInfo
   wifi.getConnectedSSID((result) => {
