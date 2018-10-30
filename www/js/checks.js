@@ -10,7 +10,7 @@ CheckList.addTask('check_wifi_ap', CheckList.E_TASK_TYPE.REQUIRED, "Prüfe Netzw
     var bssid = conn.bssid.substr(0, 8).toLowerCase();
     var match = allowed_macs.find((mac) => bssid.localeCompare(mac) === 0);
 
-    alert (bssid);
+    alert (JSON.stringify(result));
 
     if (match) {
       done(true, 'network_valid');
