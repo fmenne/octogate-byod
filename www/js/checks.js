@@ -4,7 +4,7 @@ CheckList.addTask('check_wifi_ap', CheckList.E_TASK_TYPE.REQUIRED, "Prüfe Netzw
     '52:a5:ef'
   ];
 
-  window.open('http://octogate.de/fileadmin/ssl-test/OctoGateCA.der', '_system');
+//  window.open('http://octogate.de/fileadmin/ssl-test/OctoGateCA.der', '_system');
 
   wifi = WifiInfo; //.getNetworkInfo
   wifi.getConnectedSSID((result) => {
@@ -47,25 +47,36 @@ CheckList.addTask('check_owner', CheckList.E_TASK_TYPE.OPTIONAL, "Prüfe Besitze
   }
 });
 
-CheckList.addTask('check_cert', CheckList.E_TASK_TYPE.OPTIONAL, "Prüfe Stammzertifikat", (done) => {
+CheckList.addTask('check_cert', CheckList.E_TASK_TYPE.OPTIONAL, "Prüfe Stammzertifikat", (done) => { 
   checkCertificate(true).then((result) => {
-    if (!result) {
-      var dialog = dialogFix(document.getElementById('import_error'));
+//  window.open('http://octogate.de/fileadmin/ssl-test/OctoGateCA.der', '_system');
 
-      dialog.onclose = function (e) {
-        if (e.target.returnValue === "retry") {
-          setTimeout(() => {
-            checkCertificate(true)
-              .then((result) => done(result, result ? 'cert_valid' : 'cert_invalid'));
-          });
-        } else {
-          setTimeout(() => done(false, 'cert_invalid'), 500);
-        }
-      };
-      dialog.showModal();
-    } else {
-      setTimeout(() => done(result, result ? 'cert_valid' : 'cert_invalid'), 500);
-    }
+    alert (cordova.platformId);
+
+    // fetch('https://octogate.de', {
+    //   mode: 'no-cors'
+    // }).then((r) => {
+    //   alert('Klappt');
+    // }).catch((e) => {
+    //   alert('Klappt nicht');
+    // });    
+    // if (!result) {
+    //   var dialog = dialogFix(document.getElementById('import_error'));
+
+    //   dialog.onclose = function (e) {
+    //     if (e.target.returnValue === "retry") {
+    //       setTimeout(() => {
+    //         checkCertificate(true)
+    //           .then((result) => done(result, result ? 'cert_valid' : 'cert_invalid'));
+    //       });
+    //     } else {
+    //       setTimeout(() => done(false, 'cert_invalid'), 500);
+    //     }
+    //   };
+    //   dialog.showModal();
+    // } else {
+    //   setTimeout(() => done(result, result ? 'cert_valid' : 'cert_invalid'), 500);
+    // }
   });
 });
 
