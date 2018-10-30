@@ -18,6 +18,7 @@
  */
 
 // document.getElementById('content').appendChild(CheckList.getTaskList());
+
 var taskList = document.querySelector('#content .checklist');
 var loginForm = document.querySelector('#content .login-form');
 
