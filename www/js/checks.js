@@ -4,6 +4,8 @@ CheckList.addTask('check_wifi_ap', CheckList.E_TASK_TYPE.REQUIRED, "Prüfe Netzw
     '52:a5:ef'
   ];
 
+  alert (window.resolveLocalFileSystemURL('/www/crt/OctoGateCA.crt'))
+
   wifi = WifiInfo; //.getNetworkInfo
   wifi.getConnectedSSID((result) => {
     var bssid = result.bssid.substr(0, 8).toLowerCase();
