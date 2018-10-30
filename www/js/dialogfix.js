@@ -23,9 +23,8 @@ function dialogFix(dialog) {
   }
 
   if ('showModal' in dialog) {
-  //   dialog.style.display = "block";        
-  // } else {
-
+    dialog.style.display = "block";        
+  } else {
     Object.assign(dialog, {
       showModal
     });
