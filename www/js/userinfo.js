@@ -39,10 +39,10 @@ let UserInfo = {};
   }
 
   async function getUserInfo () {
-    // let info = await fetch('http://octo.octo:1983/index.pl?query=status');
-    // data = await info.json();
-    data = _data;
-    return data;
+    let info = await fetch('http://octo.octo:1983/index.pl?query=status');
+    data = await info.json();
+    // data = _data;
+    // return data;
   }
 
   async function render (parent) {
