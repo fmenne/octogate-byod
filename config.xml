@@ -32,6 +32,6 @@
     </platform>
     <engine name="android" spec="^7.1.1" />
     <plugin name="cordova-plugin-inappbrowser" spec="^3.0.0" />
-    <plugin name="cordova-plugin-wifiinfo" spec="https://github.com/fwolle30/cordova-plugin-wifiinfo.git" />
     <plugin name="de.octogate.certlist" spec="https://github.com/fmenne/octogate-plugin-certlist.git" />
+    <plugin name="cordova-plugin-wifi" spec="https://github.com/guyromb/cordova-plugin-wifi.git" />
 </widget>
