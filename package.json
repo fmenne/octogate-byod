@@ -15,6 +15,7 @@
         "cordova-plugin-add-swift-support": "^1.7.2",
         "cordova-plugin-inappbrowser": "^3.0.0",
         "cordova-plugin-wifiinfo": "git+https://github.com/fwolle30/cordova-plugin-wifiinfo.git",
+        "cordova-wifi-info": "git+https://github.com/gregavola/cordova-wifi-info.git",
         "octogate-plugin-certlist": "git+https://github.com/fmenne/octogate-plugin-certlist.git"
     },
     "cordova": {

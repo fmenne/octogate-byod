@@ -28,10 +28,10 @@
         <icon density="ldpi" height="36" platform="android" src="res/icon/android/icon-36-ldpi.png" width="36" />
         <icon density="mdpi" height="48" platform="android" src="res/icon/android/icon-48-mdpi.png" width="48" />
         <icon density="hdpi" height="72" platform="android" src="res/icon/android/icon-72-hdpi.png" width="72" />
-        <icon density="xhdpi" height="96" platform="android" src="res/icon/android/icon-96-xhdpi.png" width="96" />        
+        <icon density="xhdpi" height="96" platform="android" src="res/icon/android/icon-96-xhdpi.png" width="96" />
     </platform>
-    <engine name="android" spec="^7.1.1" />
     <plugin name="cordova-plugin-inappbrowser" spec="^3.0.0" />
     <plugin name="de.octogate.certlist" spec="https://github.com/fmenne/octogate-plugin-certlist.git" />
-    <plugin name="cordova-plugin-wifi" spec="https://github.com/guyromb/cordova-plugin-wifi.git" />
+    <plugin name="cordova-wifi-info" spec="https://github.com/gregavola/cordova-wifi-info.git" />
+    <engine name="android" spec="^7.1.1" />
 </widget>
