@@ -6,20 +6,17 @@ CheckList.addTask('check_wifi_ap', CheckList.E_TASK_TYPE.REQUIRED, "Prüfe Netzw
 
   wifi = WifiInfo; //.getNetworkInfo
   wifi.getConnectedSSID((result) => {
-    // var conn = result.connection || { bssid: '' };
-    // var bssid = conn.bssid.substr(0, 8).toLowerCase();
-    // var match = allowed_macs.find((mac) => bssid.localeCompare(mac) === 0);
+    var bssid = result.bssid.substr(0, 8).toLowerCase();
+    var match = allowed_macs.find((mac) => bssid.localeCompare(mac) === 0);
 
-    alert (JSON.stringify(result));
-
-    // if (match) {
-    //   done(true, 'network_valid');
-    // } else {
-    //   var dialog = document.getElementById('invalid_device');
-    //   alert (dialog.innerHTML);
-    //   // dialog.showModal();
-    //   done(false, 'network_invalid');
-    // }
+    if (match) {
+      done(true, 'network_valid');
+    } else {
+      var dialog = document.getElementById('invalid_device');
+      alert (dialog.innerHTML);
+      // dialog.showModal();
+      done(false, 'network_invalid');
+    }
   })
 });
 
