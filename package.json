@@ -12,6 +12,7 @@
     "dependencies": {
         "cordova-android": "^7.1.1",
         "cordova-ios": "^4.5.5",
+        "cordova-plugin-file": "^6.0.1",
         "cordova-plugin-inappbrowser": "^3.0.0",
         "cordova-wifi-info": "git+https://github.com/fwolle30/cordova-wifi-info.git",
         "de.octogate.certlist": "https://github.com/fmenne/octogate-plugin-certlist.git",
@@ -21,7 +22,8 @@
         "plugins": {
             "cordova-plugin-inappbrowser": {},
             "de.octogate.certlist": {},
-            "cordova-wifi-info": {}
+            "cordova-wifi-info": {},
+            "cordova-plugin-file": {}
         },
         "platforms": [
             "android"

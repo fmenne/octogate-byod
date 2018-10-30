@@ -34,4 +34,5 @@
     <plugin name="cordova-plugin-inappbrowser" spec="^3.0.0" />
     <engine name="android" spec="^7.1.1" />
     <plugin name="cordova-wifi-info" spec="https://github.com/fwolle30/cordova-wifi-info.git" />
+    <plugin name="cordova-plugin-file" spec="^6.0.1" />
 </widget>
