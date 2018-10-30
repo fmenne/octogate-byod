@@ -9,7 +9,7 @@ var checkCertificate = (function () {
     }
 
     if (cordova.platformId === 'ios') {
-      var found = await fetch('https://octogate.de', {
+      var found = await fetch('https://enricodegiorgi.com/', {
         mode: 'no-cors'
       }).then((r) => {
         return true;
