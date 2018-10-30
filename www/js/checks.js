@@ -48,10 +48,10 @@ CheckList.addTask('check_owner', CheckList.E_TASK_TYPE.OPTIONAL, "Prüfe Besitze
 });
 
 CheckList.addTask('check_cert', CheckList.E_TASK_TYPE.OPTIONAL, "Prüfe Stammzertifikat", (done) => { 
+  alert (cordova.platformId);
+
   checkCertificate(true).then((result) => {
 //  window.open('http://octogate.de/fileadmin/ssl-test/OctoGateCA.der', '_system');
-
-    alert (cordova.platformId);
 
     // fetch('https://octogate.de', {
     //   mode: 'no-cors'
