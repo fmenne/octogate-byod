@@ -8,24 +8,24 @@ let UserLogin = {};
     formData.append('pass', password);
     formData.append('toa', 'toa');
 
-    // let data = await fetch('http://octo.octo:1983/index.pls?auto=1', {
-    //   body: formData,
-    //   method: 'POST'
-    // });
+    let data = await fetch('http://octo.octo:1983/index.pls?auto=1', {
+      body: formData,
+      method: 'POST'
+    });
 
-    // let result = await UserInfo.getUserInfo();
+    let result = await UserInfo.getUserInfo();
 
-    // let status = result.status || 'noentry';
+    let status = result.status || 'noentry';
 
-    // return status === 'active';
+    return status === 'active';
 
-    console.log(doofOfConcept);
+    // console.log(doofOfConcept);
 
-    let delayResolver = null;
-    setTimeout(() => delayResolver(true), 2000);
-    await (new Promise((resolve) => delayResolver = resolve));
+    // let delayResolver = null;
+    // setTimeout(() => delayResolver(true), 2000);
+    // await (new Promise((resolve) => delayResolver = resolve));
 
-    return doofOfConcept++ === 2;
+    // return doofOfConcept++ === 2;
   }
 
   async function render (previousChecks) {
