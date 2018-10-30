@@ -33,6 +33,16 @@ body {
   background: linear-gradient(#ececec,#fff);
 }
 
+#error {
+  position: absolute;
+  border: 1px solid black;
+  background: #FFF0F0;
+  width: 640px;
+  white-space: normal;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 .pagewrapper {
   padding: 10px;
   /* width: 320px; */
