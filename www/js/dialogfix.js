@@ -18,6 +18,8 @@ function dialogFix(dialog) {
             target: dialog
           });
         }
+
+        dialog.style.display = 'none';
       })
     });
   }
