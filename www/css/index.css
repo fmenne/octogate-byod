@@ -136,6 +136,14 @@ dialog {
   z-index: 100; 
 }
 
+dialog:not([open]) {
+  display: none;
+}
+
+dialog[open] {
+  display: block;
+}
+
 dialog h1 {
   font-size: 1.0rem;
   margin: 0;

@@ -1,7 +1,6 @@
 function dialogFix(dialog) {
   function showModal() {
-    dialog.style.display = "block";
-
+    dialog.setAttribute('open', 'open');
     let buttons = dialog.querySelectorAll('button');
 
     Array.from(buttons).forEach((button) => {
@@ -24,7 +23,7 @@ function dialogFix(dialog) {
   }
 
   if ('showModal' in dialog) {
-    dialog.style.display = "block";        
+    // dialog.style.display = "block";        
   } else {
     Object.assign(dialog, {
       showModal
