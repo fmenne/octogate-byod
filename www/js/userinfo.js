@@ -16,14 +16,20 @@ let UserInfo = {};
     "type": "Voucher Login",
     "profile_name": 'Schüler',
     "ssl": null,
-    "username": 'fwolbring',
-    "dead_date": "2018-10-26 14:58:18",
+    "username": 'mmuster',
+    "dead_date": "2018-10-31 14:58:18",
     "status": "active"
   };
 
   function updateCountDown (element) {
     let currentDate = Date.now();
     let diff = Math.floor((endDate - currentDate) / 1000);
+    let negative = false;
+
+    if (diff < 0) {
+      negative = true;
+      diff = Math.abs(diff);
+    }
 
     let seconds = diff % 60;
     let minutes = Math.floor(diff / 60) % 60;
@@ -32,7 +38,7 @@ let UserInfo = {};
     seconds = "00".substr(0, 2 - seconds.toString().length) + seconds;
     minutes = "00".substr(0, 2 - minutes.toString().length) + minutes;
 
-    element.innerText = `${hours}:${minutes}:${seconds}`;
+    element.innerText = `${negative ? '-' : ''}${hours}:${minutes}:${seconds}`;
 
     clearTimeout(countDownTimeout);
     countDownTimeout = setTimeout(() => updateCountDown(element), 1000);

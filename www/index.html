@@ -29,7 +29,7 @@
             * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
                 * Enable inline JS: add 'unsafe-inline' to default-src
         -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: 'unsafe-eval' gap://ready file: https://ssl.gstatic.com; script-src 'self' data: 'unsafe-eval' 'sha256-//EpknlGOwA2ZUGD53DvJrg0dV/dkHepzV7oWUgancc=' gap://ready file: https://ssl.gstatic.com; style-src 'self' 'unsafe-inline' ; img-src 'self' data: content: https://api.statvoo.com/; connect-src * 127.0.0.1:5500; media-src * ;">  
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: 'unsafe-eval' gap://ready file: https://ssl.gstatic.com; script-src 'self' data: 'unsafe-eval' 'sha256-//EpknlGOwA2ZUGD53DvJrg0dV/dkHepzV7oWUgancc=' gap://ready file: https://ssl.gstatic.com; style-src 'self' 'unsafe-inline' ; img-src *; connect-src * 127.0.0.1:5500; media-src * ;">  
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta name="format-detection" content="telephone=no">
   <meta name="msapplication-tap-highlight" content="no">
