@@ -70,7 +70,11 @@ let UserInfo = {};
         });
     }
 
-    endDate = new Date(userInfo.dead_date).getTime();
+    let [date, time] = userInfo.dead_date.split(' ');
+    let [hours, minutes, seconds] = time.split(':').map(d => parseInt(d));
+    let [year, month, day] = date.split('-').map((d, i) => (i !== 1) ? parseInt(d) : parseInt(d) - 1);
+
+    endDate = new Date(year, month, day, hours, minutes, seconds).getTime();
 
     let infoLine = document.createElement('p');
     infoLine.innerHTML = `Angemeldet als <b>${userInfo.username}</b> mit dem Profil <b>${userInfo.profile_name}</b>.`
