@@ -10,8 +10,6 @@ CheckList.addTask('check_wifi_ap', CheckList.E_TASK_TYPE.REQUIRED, "Prüfe Netzw
 
   wifi = WifiInfo; //.getNetworkInfo
 
-  alert (WifiInfo.getConnectedSSID);
-
   wifi.getConnectedSSID((result) => {
     var bssid = result.bssid || '';
     bssid = bssid.substr(0, 8).toLowerCase();
