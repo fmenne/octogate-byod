@@ -1,8 +1,8 @@
 CheckList.addTask('check_wifi_ap', CheckList.E_TASK_TYPE.REQUIRED, "Prüfe Netzwerk", (done) => {
   const allowed_macs = [
     '40:a5:ef',
-    '52:a5:ef',
     '46:a5:ef',
+    '52:a5:ef',
     '02:00:00' // android emulator
   ];
 
@@ -13,6 +13,8 @@ CheckList.addTask('check_wifi_ap', CheckList.E_TASK_TYPE.REQUIRED, "Prüfe Netzw
     var bssid = result.bssid || '';
     bssid = bssid.substr(0, 8).toLowerCase();
     var match = allowed_macs.find((mac) => bssid.localeCompare(mac) === 0);
+
+    alert (JSON.stringify(bssid));
 
     if (match) {
       done(true, 'network_valid');
