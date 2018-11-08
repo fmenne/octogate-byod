@@ -11,6 +11,8 @@ let UserLogin = {};
     let data = await fetch('http://octo.octo:1983/index.pls?auto=1', {
       body: formData,
       method: 'POST'
+    }).then((result) => {
+      alert.log(await result.text());
     });
 
     let result = await UserInfo.getUserInfo();
