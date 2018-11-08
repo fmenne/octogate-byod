@@ -14,8 +14,6 @@ var checkCertificate = (function () {
       }).then((r) => {
         return true;
       }).catch((e) => {
-        alert (e);
-
         return false;
       });
     } else {
