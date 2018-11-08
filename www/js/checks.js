@@ -1,7 +1,7 @@
 CheckList.addTask('check_wifi_ap', CheckList.E_TASK_TYPE.REQUIRED, "Prüfe Netzwerk", (done) => {
   const allowed_macs = [
     '40:a5:ef',
-    '46:a5:ef',
+    // '46:a5:ef',
     '52:a5:ef',
     '02:00:00' // android emulator
   ];
