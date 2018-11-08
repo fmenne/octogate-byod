@@ -10,10 +10,7 @@ CheckList.addTask('check_wifi_ap', CheckList.E_TASK_TYPE.REQUIRED, "Prüfe Netzw
 
   wifi = WifiInfo; //.getNetworkInfo
 
-  alert ('Argh');
-
   wifi.getConnectedSSID((result) => {
-    alert ('Moinsen');
     var bssid = result.bssid || '';
     bssid = bssid.substr(0, 8).toLowerCase();
     var match = allowed_macs.find((mac) => bssid.localeCompare(mac) === 0);
