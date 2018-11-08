@@ -33,7 +33,7 @@ CheckList.addTask('check_storage', CheckList.E_TASK_TYPE.OPTIONAL_HIDDEN, "Prüf
   done(result, result ? 'storage_available' : 'storage_notavailable');
 })
 
-CheckList.addTask('check_owner', CheckList.E_TASK_TYPE.OPTIONAL, "Prüfe Besitzer", (done) => {
+CheckList.addTask('check_owner', CheckList.E_TASK_TYPE.OPTIONAL_HIDDEN, "Prüfe Besitzer", (done) => {
   var owner = localStorage.getItem('device_owner');
 
   if (!owner) {
