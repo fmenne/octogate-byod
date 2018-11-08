@@ -26,6 +26,8 @@ CheckList.addTask('check_wifi_ap', CheckList.E_TASK_TYPE.REQUIRED, "Prüfe Netzw
 
       done(false, 'network_invalid');
     }
+  }, (error) => {
+    alert (error);
   })
 });
 
