@@ -64,6 +64,9 @@ var LinkList = {};
 
         var icon = document.createElement('img');
         icon.src = link.icon_url;
+        icon.onerror = function(e) {
+          alert(e.message);
+        }
 
         titleSpan.appendChild(title);
         linkA.appendChild(icon);
