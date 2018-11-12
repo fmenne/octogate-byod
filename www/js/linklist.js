@@ -4,18 +4,18 @@ var LinkList = {};
   var listElement = null;
 
   async function getLinks () {
-    // const result = await fetch('http://octo.octo:1983/index.pl?query=menu');
-    // return result.json();
-    return new Promise((resolve) => {
-      resolve([
-        { "url": "http://www.schulfirewall.de", "icon_url": "http://api.statvoo.com/favicon/?url=www.schulfirewall.de", "title": "Schulfirewall.de" },
-        { "url": "http://www.wikipedia.org", "icon_url": "http://api.statvoo.com/favicon/?url=www.wikipedia.org", "title": "Wikipedia" },
-        { "url": "http://www.octogate.de", "icon_url": "http://api.statvoo.com/favicon/?url=www.octogate.de", "title": "OctoGate: Hardware Firewall und Virenschutz – OctoGate: Einfach. Sicher. Geschützt.: Übersicht" },
-        { "url": "http://www.google.de", "icon_url": "http://api.statvoo.com/favicon/?url=www.google.de", "title": "Google" },
-        { "url": "http://www.heise.de", "icon_url": "http://api.statvoo.com/favicon/?url=www.heise.de", "title": "heise online - IT-News, Nachrichten und Hintergründe heise online" },
-        { "url": "http://www.golem.de", "icon_url": "http://api.statvoo.com/favicon/?url=www.golem.de", "title": "Golem.de" }
-      ]);
-    });
+    const result = await fetch('http://octo.octo:1983/index.pl?query=menu');
+    return result.json();
+    // return new Promise((resolve) => {
+    //   resolve([
+    //     { "url": "http://www.schulfirewall.de", "icon_url": "http://api.statvoo.com/favicon/?url=www.schulfirewall.de", "title": "Schulfirewall.de" },
+    //     { "url": "http://www.wikipedia.org", "icon_url": "http://api.statvoo.com/favicon/?url=www.wikipedia.org", "title": "Wikipedia" },
+    //     { "url": "http://www.octogate.de", "icon_url": "http://api.statvoo.com/favicon/?url=www.octogate.de", "title": "OctoGate: Hardware Firewall und Virenschutz – OctoGate: Einfach. Sicher. Geschützt.: Übersicht" },
+    //     { "url": "http://www.google.de", "icon_url": "http://api.statvoo.com/favicon/?url=www.google.de", "title": "Google" },
+    //     { "url": "http://www.heise.de", "icon_url": "http://api.statvoo.com/favicon/?url=www.heise.de", "title": "heise online - IT-News, Nachrichten und Hintergründe heise online" },
+    //     { "url": "http://www.golem.de", "icon_url": "http://api.statvoo.com/favicon/?url=www.golem.de", "title": "Golem.de" }
+    //   ]);
+    // });
   }
 
   async function renderList (parent) {
