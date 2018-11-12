@@ -29,7 +29,7 @@
             * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
                 * Enable inline JS: add 'unsafe-inline' to default-src
         -->
-  <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: 'unsafe-eval' gap://ready file: https://ssl.gstatic.com; script-src 'self' data: 'unsafe-eval' 'sha256-//epknlgowa2zugd53dvjrg0dv/dkhepzv7owugancc=' gap://ready file: https://ssl.gstatic.com; style-src 'self' 'unsafe-inline' ; img-src * ; connect-src * ; media-src * ;">   -->
+  <meta http-equiv="Content-Security-Policy" content="Content-Security-Policy: default-src 'self' data: 'unsafe-eval' gap://ready file: https://ssl.gstatic.com; script-src 'self' data: 'unsafe-eval' 'sha256-//epknlgowa2zugd53dvjrg0dv/dkhepzv7owugancc=' gap://ready file: https://ssl.gstatic.com; style-src 'self' 'unsafe-inline' ; img-src * http://api.statvoo.com; connect-src * http://octo.octo https://octogate.de; media-src * ;">  
   <!-- <meta http-equiv="Content-Security-Policy" content="default-src *">   -->
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta name="format-detection" content="telephone=no">
