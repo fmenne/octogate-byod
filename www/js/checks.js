@@ -52,27 +52,27 @@ CheckList.addTask('check_owner', CheckList.E_TASK_TYPE.OPTIONAL_HIDDEN, "Prüfe 
   }
 });
 
-CheckList.addTask('check_cert', CheckList.E_TASK_TYPE.OPTIONAL, "Prüfe Stammzertifikat", (done) => { 
-  checkCertificate(true).then((result) => {
-    if (!result) {
-      var dialog = dialogFix(document.getElementById('import_error'));
+// CheckList.addTask('check_cert', CheckList.E_TASK_TYPE.OPTIONAL, "Prüfe Stammzertifikat", (done) => { 
+//   checkCertificate(true).then((result) => {
+//     if (!result) {
+//       var dialog = dialogFix(document.getElementById('import_error'));
 
-      dialog.onclose = function (e) {
-        if (e.target.returnValue === "retry") {
-          setTimeout(() => {
-            checkCertificate(true)
-              .then((result) => done(result, result ? 'cert_valid' : 'cert_invalid'));
-          });
-        } else {
-          setTimeout(() => done(false, 'cert_invalid'), 500);
-        }
-      };
-      dialog.showModal();
-    } else {
-      setTimeout(() => done(result, result ? 'cert_valid' : 'cert_invalid'), 500);
-    }
-  });
-});
+//       dialog.onclose = function (e) {
+//         if (e.target.returnValue === "retry") {
+//           setTimeout(() => {
+//             checkCertificate(true)
+//               .then((result) => done(result, result ? 'cert_valid' : 'cert_invalid'));
+//           });
+//         } else {
+//           setTimeout(() => done(false, 'cert_invalid'), 500);
+//         }
+//       };
+//       dialog.showModal();
+//     } else {
+//       setTimeout(() => done(result, result ? 'cert_valid' : 'cert_invalid'), 500);
+//     }
+//   });
+// });
 
 CheckList.addTask('check_userdata', CheckList.E_TASK_TYPE.OPTIONAL, "Prüfe Benutzerdaten", (done, previousChecks) => {
   let userName = localStorage.getItem('user_name');
