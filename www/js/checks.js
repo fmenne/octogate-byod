@@ -1,5 +1,5 @@
 
-var networkAdress = null;  
+var networkAdress = null;
 
 CheckList.addTask('check_wifi_ap', CheckList.E_TASK_TYPE.REQUIRED, "Prüfe Netzwerk", (done) => {
   const allowed_macs = [
@@ -9,7 +9,7 @@ CheckList.addTask('check_wifi_ap', CheckList.E_TASK_TYPE.REQUIRED, "Prüfe Netzw
     '02:00:00' // android emulator
   ];
 
-//  window.open('http://octogate.de/fileadmin/ssl-test/OctoGateCA.der', '_system');
+  //  window.open('http://octogate.de/fileadmin/ssl-test/OctoGateCA.der', '_system');
 
   wifi = WifiInfo; //.getNetworkInfo
 
@@ -23,7 +23,7 @@ CheckList.addTask('check_wifi_ap', CheckList.E_TASK_TYPE.REQUIRED, "Prüfe Netzw
     var match = allowed_macs.find((mac) => bssid.localeCompare(mac) === 0);
 
     if (match) {
-      done(true, {result: 'network_valid', result_value: result});
+      done(true, { result: 'network_valid', result_value: result });
     } else {
       var dialog = dialogFix(document.getElementById('invalid_device'));
       dialog.showModal();
@@ -31,7 +31,7 @@ CheckList.addTask('check_wifi_ap', CheckList.E_TASK_TYPE.REQUIRED, "Prüfe Netzw
       done(false, 'network_invalid');
     }
   }, (error) => {
-    alert (error);
+    alert(error);
   });
 });
 
@@ -74,7 +74,9 @@ CheckList.addTask('check_userdata', CheckList.E_TASK_TYPE.OPTIONAL, "Prüfe Benu
           .then((status) => {
             if (!status) {
               UserLogin.render(previousChecks)
-                .then(() => done(true, 'user_valid'));
+                .then(() => {
+                  setTimeout(() => done(true, 'user_valid'), 2000);
+                });
             } else {
               done(true, 'user_valid');
             }
@@ -87,7 +89,7 @@ CheckList.addTask('check_userdata', CheckList.E_TASK_TYPE.OPTIONAL, "Prüfe Benu
   }
 });
 
-CheckList.addTask('check_cert', CheckList.E_TASK_TYPE.OPTIONAL, "Prüfe Stammzertifikat", (done) => { 
+CheckList.addTask('check_cert', CheckList.E_TASK_TYPE.OPTIONAL, "Prüfe Stammzertifikat", (done) => {
   checkCertificate(true).then((result) => {
     if (!result) {
       var dialog = dialogFix(document.getElementById('import_error'));
