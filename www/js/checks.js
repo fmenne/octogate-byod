@@ -1,3 +1,6 @@
+
+var networkAdress = null;  
+
 CheckList.addTask('check_wifi_ap', CheckList.E_TASK_TYPE.REQUIRED, "Prüfe Netzwerk", (done) => {
   const allowed_macs = [
     '40:a5:ef',
@@ -11,14 +14,16 @@ CheckList.addTask('check_wifi_ap', CheckList.E_TASK_TYPE.REQUIRED, "Prüfe Netzw
   wifi = WifiInfo; //.getNetworkInfo
 
   wifi.getConnectedSSID((result) => {
-    alert(JSON.stringify(result));
+    console.log(result);
+
+    networkAdress = result.gateway;
 
     var bssid = result.bssid || '';
     bssid = bssid.substr(0, 8).toLowerCase();
     var match = allowed_macs.find((mac) => bssid.localeCompare(mac) === 0);
 
     if (match) {
-      done(true, 'network_valid');
+      done(true, {result: 'network_valid', result_value: result});
     } else {
       var dialog = dialogFix(document.getElementById('invalid_device'));
       dialog.showModal();
@@ -27,7 +32,7 @@ CheckList.addTask('check_wifi_ap', CheckList.E_TASK_TYPE.REQUIRED, "Prüfe Netzw
     }
   }, (error) => {
     alert (error);
-  })
+  });
 });
 
 CheckList.addTask('check_storage', CheckList.E_TASK_TYPE.OPTIONAL_HIDDEN, "Prüfe Einstellungen", (done) => {

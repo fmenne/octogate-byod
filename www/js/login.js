@@ -8,7 +8,7 @@ let UserLogin = {};
     formData.append('pass', password);
     formData.append('toa', 'toa');
 
-    let data = await fetch('http://octo.octo:1983/index.pl?auto=1', {
+    let data = await fetch(`http://${networkAdress}:1983/index.pl?auto=1`, {
       body: formData,
       method: 'POST'
     });
