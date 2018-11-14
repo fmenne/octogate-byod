@@ -36,6 +36,14 @@ let style = document.createElement('style');
 style.appendChild(document.createTextNode(''));
 document.body.append(style);
 
+Array.from(document.querySelectorAll('[target="_system"]')).forEach(link => {
+  link.addEventListener('click', (event) => {
+    event.preventDefault();
+
+    window.open(link.href, '_system');
+  })
+})
+
 style.sheet.insertRule(`.checklist {height:${taskList.clientHeight}px}`);
 style.sheet.insertRule(`.login-form {height:172px}`);
 style.sheet.insertRule(`.login-form.has-errors {height: 217px;}`);
