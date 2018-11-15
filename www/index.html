@@ -29,7 +29,7 @@
             * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
                 * Enable inline JS: add 'unsafe-inline' to default-src
         -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: 'unsafe-eval' gap://ready file: https://ssl.gstatic.com; script-src 'self' data: 'unsafe-eval' 'sha256-//epknlgowa2zugd53dvjrg0dv/dkhepzv7owugancc=' gap://ready file: https://ssl.gstatic.com; style-src 'self' 'unsafe-inline' ; img-src * 'self' http://api.statvoo.com https://api.statvoo.com; connect-src * http://octo.octo https://octogate.de; media-src * ;">  
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: 'unsafe-eval' gap://ready file: https://ssl.gstatic.com; script-src 'self' data: 'unsafe-eval' 'sha256-//epknlgowa2zugd53dvjrg0dv/dkhepzv7owugancc=' gap://ready file: https://ssl.gstatic.com; style-src 'self' 'unsafe-inline' ; img-src * 'self' http://api.statvoo.com https://api.statvoo.com; connect-src * http://octo.octo https://octogate.de; media-src * ;">
   <!-- <meta http-equiv="Content-Security-Policy" content="default-src *">   -->
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta name="format-detection" content="telephone=no">
@@ -82,7 +82,18 @@
     <form method="dialog">
       <p>Diese App kann nur in verbindung mit einem gültigen OctoGate Accesspoint benutz werden.</p>
       <p>Bitte stellen Sie sicher, das Sie mit dem richtigen Accesspoint verbunden sind,
-         und dieser ein gültiger OctoGate Accesspoint ist.</p>
+        und dieser ein gültiger OctoGate Accesspoint ist.</p>
+    </form>
+  </dialog>
+
+  <dialog id="interface_error">
+    <form method="dialog">
+      <p>Es konnte keine Verbindung mit dem Accesspoint hergestellt werden.</p>
+      <p>Bitte stellen Sie sicher, das Sie mit dem richtigen Accesspoint verbunden sind,
+        und dieser ein gültiger OctoGate Accesspoint ist.</p>
+      <menu>
+        <button id="interface_retry" name="retry" value="retry">Wiederholen</button>
+      </menu>
     </form>
   </dialog>
 
@@ -117,7 +128,8 @@
     </ul>
     <div class="content-wrapper">
       <ul id="side-menu">
-        <li><a href="https://get.teamviewer.com/t5fu5nv" target="_system"><img src="./img/TeamViewer_Logo_Icon_Only.png" width="32" height="32"> TeamViewer Quickwartung</a></li>
+        <li><a href="https://get.teamviewer.com/t5fu5nv" target="_system"><img src="./img/TeamViewer_Logo_Icon_Only.png"
+              width="32" height="32"> TeamViewer Quickwartung</a></li>
       </ul>
       <div id="app-content">
         <div class="dark"></div>

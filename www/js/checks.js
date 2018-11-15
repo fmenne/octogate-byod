@@ -14,7 +14,7 @@ CheckList.addTask('check_wifi_ap', CheckList.E_TASK_TYPE.REQUIRED, "Prüfe Netzw
   wifi = WifiInfo; //.getNetworkInfo
 
   wifi.getConnectedSSID((result) => {
-    console.log(result);
+    // console.log(result);
 
     networkAdress = result.gateway;
 
@@ -31,7 +31,7 @@ CheckList.addTask('check_wifi_ap', CheckList.E_TASK_TYPE.REQUIRED, "Prüfe Netzw
       done(false, 'network_invalid');
     }
   }, (error) => {
-    alert(error);
+    // alert(error);
   });
 });
 

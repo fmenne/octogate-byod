@@ -11,7 +11,10 @@ let UserLogin = {};
     let data = await fetch(`http://${networkAdress}:1983/index.pl?auto=1`, {
       body: formData,
       method: 'POST'
-    });
+    })
+      .catch((e) => {
+        console.log("Hi I'm also buggy", e);
+      });
 
 
     let result = await UserInfo.getUserInfo();
@@ -40,7 +43,7 @@ let UserLogin = {};
       loginFormHide();
 
       let userName = userNameField.value;
-      let userPassword = userPasswordField.value;      
+      let userPassword = userPasswordField.value;
 
       userNameField.value = '';
       userPasswordField.value = '';

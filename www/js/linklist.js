@@ -13,7 +13,7 @@ var LinkList = {};
     //     { "url": "http://www.octogate.de", "icon_url": "http://api.statvoo.com/favicon/?url=www.octogate.de", "title": "OctoGate: Hardware Firewall und Virenschutz – OctoGate: Einfach. Sicher. Geschützt.: Übersicht" },
     //     { "url": "http://www.google.de", "icon_url": "http://api.statvoo.com/favicon/?url=www.google.de", "title": "Google" },
     //     { "url": "http://www.heise.de", "icon_url": "http://api.statvoo.com/favicon/?url=www.heise.de", "title": "heise online - IT-News, Nachrichten und Hintergründe heise online" },
-    //     { "url": "http://www.golem.de", "icon_url": "http://api.statvoo.com/favicon/?url=www.golem.de", "title": "Golem.de" }
+    //     { "url": "https://www.youtube.com/watch?v=mr9-0YPUL68", "icon_url": "http://api.statvoo.com/favicon/?url=www.youtube.com", "title": "YouTube.de" }
     //   ]);
     // });
   }
@@ -34,7 +34,7 @@ var LinkList = {};
         var entry = document.createElement('li');
         entry.classList.add('link-list_entry');
 
-        console.log(link);
+        // console.log(link);
 
         var linkA = document.createElement('a');
         linkA.href = '#';
@@ -49,7 +49,7 @@ var LinkList = {};
             var placeHolder = {
               'userupper': data.username.toUpperCase(),
               'userlower': data.username.toLowerCase(),
-              'octogate': 'oxoxoxox'
+              'octogate': data.hostname
             }
 
             var val =  placeHolder[part.toLowerCase()] || finding;
@@ -64,9 +64,6 @@ var LinkList = {};
 
         var icon = document.createElement('img');
         icon.src = link.icon_url;
-        icon.onerror = function(e) {
-          alert(e.message);
-        }
 
         titleSpan.appendChild(title);
         linkA.appendChild(icon);

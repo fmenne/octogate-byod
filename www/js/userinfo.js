@@ -45,8 +45,24 @@ let UserInfo = {};
   }
 
   async function getUserInfo () {
-    let info = await fetch(`http://${networkAdress}:1983/index.pl?query=status`);
-    data = await info.json();
+    data = await fetch(`http://${networkAdress}:1983/index.pl?query=status`)
+      .then((info) => info.json())
+      .catch((e) => {
+        var resolver = null;
+
+        var dialog = dialogFix(document.getElementById('interface_error'));
+        dialog.onclose = function(e) {
+          if (e.target.returnValue === "retry") {
+            resolver(getUserInfo())
+          } else {
+            resolver({});
+          }
+        }
+        dialog.showModal();
+
+        return new Promise((resolve) => (resolver = resolve));
+      });
+    // data = await info.json();
 
     // alert (JSON.stringify(data));
 
@@ -68,9 +84,9 @@ let UserInfo = {};
     let userInfo = await (getUserInfo());
 
     if (update) {
-        Array.from(infoElement.childNodes).forEach((child) => {
-          infoElement.removeChild(child);
-        });
+      Array.from(infoElement.childNodes).forEach((child) => {
+        infoElement.removeChild(child);
+      });
     }
 
     let [date, time] = userInfo.dead_date.split(' ');
