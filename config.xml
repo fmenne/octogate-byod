@@ -32,15 +32,7 @@
         <icon density="hdpi" height="72" platform="android" src="res/icon/android/icon-72-hdpi.png" width="72" />
         <icon density="xhdpi" height="96" platform="android" src="res/icon/android/icon-96-xhdpi.png" width="96" />
 		
-		<splash src="res/screen/ios/screen-ipad-landscape.png" />
-		<splash src="res/screen/ios/screen-ipad-landscape-2x.png" />
-		<splash src="res/screen/ios/screen-ipad-portrait.png" />
-		<splash src="res/screen/ios/screen-ipad-portrait-2x.png" />
-		<splash src="res/screen/ios/screen-iphone-landscape.png" />
-		<splash src="res/screen/ios/screen-iphone-landscape-2x.png" />		
-		<splash src="res/screen/ios/screen-iphone-portrait.png" />
-		<splash src="res/screen/ios/screen-iphone-portrait-2x.png" />
-		<splash src="res/screen/ios/screen-iphone-portrait-568h-2x.png" />
+		<splash src="res/screen/ios/Default@2x~universal~anyany.png" />
     </platform>
     <plugin name="de.octogate.certlist" spec="https://github.com/fmenne/octogate-plugin-certlist.git" />
     <plugin name="cordova-plugin-inappbrowser" spec="^3.0.0" />
