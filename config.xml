@@ -8,8 +8,8 @@
         OctoGate IT Security Systems GmbH
     </author>
     <preference name="android-minSdkVersion" value="26"/>
-    <preference name="android-targetSdkVersion"    value="26" />
-    <preference name="android-maxSdkVersion"        value="26" />
+    <preference name="android-targetSdkVersion" value="26" />
+    <preference name="android-maxSdkVersion" value="26" />
     <content src="index.html" />
     <access origin="*" />
     <access origin="http://*/*" />
