@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.hsm.octogate" version="1.1.5" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.hsm.octogate" version="1.1.5" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
     <name>OctoGate BYOD</name>
     <description>
         Bring your own device (BYOD) App for OctoGate.
@@ -7,7 +7,7 @@
     <author email="fwolbring@octogate.de" href="http://octogate.de">
         OctoGate IT Security Systems GmbH
     </author>
-    <preference name="android-minSdkVersion" value="26"/>
+    <preference name="android-minSdkVersion" value="26" />
     <preference name="android-targetSdkVersion" value="26" />
     <preference name="android-maxSdkVersion" value="26" />
     <content src="index.html" />
@@ -21,36 +21,33 @@
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
     <platform name="android">
-        <allow-intent href="market:*" />	
+        <allow-intent href="market:*" />
         <icon height="36" platform="android" src="res/icon/android/icon-36-ldpi.png" width="36" />
         <icon height="48" platform="android" src="res/icon/android/icon-48-mdpi.png" width="48" />
         <icon height="72" platform="android" src="res/icon/android/icon-72-hdpi.png" width="72" />
         <icon height="96" platform="android" src="res/icon/android/icon-96-xhdpi.png" width="96" />
-		
         <icon height="76" platform="android" src="res/icon/android/icon-76.png" width="76" />
         <icon height="120" platform="android" src="res/icon/android/icon-120.png" width="120" />
         <icon height="152" platform="android" src="res/icon/android/icon-152.png" width="152" />
-        <icon height="1024" platform="android" src="res/icon/android/icon-1024.png" width="1024" />		
+        <icon height="1024" platform="android" src="res/icon/android/icon-1024.png" width="1024" />
     </platform>
     <platform name="ios">
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
-
-        <icon height="512" width="512" platform="ios" src="iTunesArtwork" platform="ios" />
-        <icon height="1024" width="1024" platform="ios" src="iTunesArtwork@2x" platform="ios" />
-        <icon height="29" width="29" platform="ios" src="Icon-Small.png" platform="ios" />
-        <icon height="58" width="58" platform="ios" src="Icon-Small@2x.png" platform="ios" />
-        <icon height="87" width="87" platform="ios" src="Icon-Small@3x.png" platform="ios" />
-        <icon height="40" width="40" platform="ios" src="Icon-Small-40.png" platform="ios" />
-        <icon height="80" width="80" platform="ios" src="Icon-Small-40@2x.png" platform="ios" />
-        <icon height="120" width="120" platform="ios" src="Icon-Small-40@3x.png" platform="ios" />
-        <icon height="76" width="76" platform="ios" src="Icon-76.png" platform="ios" />
-        <icon height="152" width="152" platform="ios" src="Icon-76@2x.png" platform="ios" />
-        <icon height="120" width="120" platform="ios" src="Icon-60@2x.png" platform="ios" />
-        <icon height="180" width="180" platform="ios" src="Icon-60@3x.png" platform="ios" />
-        <icon height="167" width="167" platform="ios" src="Icon-83.5@2x.png" platform="ios"  />	
-		
-		<splash src="res/screen/ios/Default@2x~universal~anyany.png" />
+        <icon height="512" platform="ios" src="iTunesArtwork" width="512" />
+        <icon height="1024" platform="ios" src="iTunesArtwork@2x" width="1024" />
+        <icon height="29" platform="ios" src="Icon-Small.png" width="29" />
+        <icon height="58" platform="ios" src="Icon-Small@2x.png" width="58" />
+        <icon height="87" platform="ios" src="Icon-Small@3x.png" width="87" />
+        <icon height="40" platform="ios" src="Icon-Small-40.png" width="40" />
+        <icon height="80" platform="ios" src="Icon-Small-40@2x.png" width="80" />
+        <icon height="120" platform="ios" src="Icon-Small-40@3x.png" width="120" />
+        <icon height="76" platform="ios" src="Icon-76.png" width="76" />
+        <icon height="152" platform="ios" src="Icon-76@2x.png" width="152" />
+        <icon height="120" platform="ios" src="Icon-60@2x.png" width="120" />
+        <icon height="180" platform="ios" src="Icon-60@3x.png" width="180" />
+        <icon height="167" platform="ios" src="Icon-83.5@2x.png" width="167" />
+        <splash src="res/screen/ios/Default@2x~universal~anyany.png" />
     </platform>
     <plugin name="de.octogate.certlist" spec="https://github.com/fmenne/octogate-plugin-certlist.git" />
     <plugin name="cordova-plugin-inappbrowser" spec="^3.0.0" />
