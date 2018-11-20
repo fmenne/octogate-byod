@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget  id="com.hsm.octogate" version="1.0.4" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.hsm.octogate" version="1.0.4" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>OctoGate BYOD</name>
     <description>
         Bring your own device (BYOD) App for OctoGate.
@@ -30,10 +30,15 @@
     <platform name="ios">
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
-        <icon density="ldpi" height="36" platform="android" src="res/icon/android/icon-36-ldpi.png" width="36" />
-        <icon density="mdpi" height="48" platform="android" src="res/icon/android/icon-48-mdpi.png" width="48" />
-        <icon density="hdpi" height="72" platform="android" src="res/icon/android/icon-72-hdpi.png" width="72" />
-        <icon density="xhdpi" height="96" platform="android" src="res/icon/android/icon-96-xhdpi.png" width="96" />
+        <icon height="36" platform="ios" src="res/icon/android/icon-36-ldpi.png" width="36" />
+        <icon height="48" platform="ios" src="res/icon/android/icon-48-mdpi.png" width="48" />
+        <icon height="72" platform="ios" src="res/icon/android/icon-72-hdpi.png" width="72" />
+        <icon height="96" platform="ios" src="res/icon/android/icon-96-xhdpi.png" width="96" />
+		
+        <icon height="76" platform="ios" src="res/icon/android/icon-76.png" width="76" />
+        <icon height="120" platform="ios" src="res/icon/android/icon-120.png" width="120" />
+        <icon height="152" platform="ios" src="res/icon/android/icon-152.png" width="152" />
+        <icon height="1024" platform="ios" src="res/icon/android/icon-1024.png" width="1024" />
 		
 		<splash src="res/screen/ios/Default@2x~universal~anyany.png" />
     </platform>
