@@ -55,7 +55,16 @@
 		<icon height="144" platform="ios" src="res/icon/ios/icon-72@2x.png" width="144" />
 		<icon height="114" platform="ios" src="res/icon/ios/icon@2x.png" width="114" />
 		
-        <splash src="res/screen/ios/Default@2x~universal~anyany.png" />
+		<splash width="640" height="960" src="res/screen/ios/Default@2x~iphone.png" />
+		<splash width="1024" height="768" src="res/screen/ios/Default-Landscape~ipad.png" />
+		<splash width="1080" height="1920" src="res/screen/ios/Default-736h.png" />
+		<splash width="1920" height="1080" src="res/screen/ios/Default-Landscape-736h.png" />
+		<splash width="1536" height="2048" src="res/screen/ios/Default-Portrait@2x~ipad.png" />
+		<splash width="640" height="1136" src="res/screen/ios/Default-568h@2x~iphone.png" />
+		<splash width="320" height="480" src="res/screen/ios/Default~iphone.png" />
+		<splash width="768" height="1024" src="res/screen/ios/Default-Portrait~ipad.png" />
+		<splash width="750" height="1334" src="res/screen/ios/Default-667h.png" />
+		<splash width="2048" height="1536" src="res/screen/ios/Default-Landscape@2x~ipad.png" />
     </platform>
     <plugin name="de.octogate.certlist" spec="https://github.com/fmenne/octogate-plugin-certlist.git" />
     <plugin name="cordova-plugin-inappbrowser" spec="^3.0.0" />
