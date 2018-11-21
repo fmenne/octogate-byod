@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.hsm.octogate" version="1.1.5" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+<widget id="com.hsm.octogate" version="1.1.6" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
     <name>OctoGate BYOD</name>
     <description>
         Bring your own device (BYOD) App for OctoGate.
@@ -7,9 +7,8 @@
     <author email="fwolbring@octogate.de" href="http://octogate.de">
         OctoGate IT Security Systems GmbH
     </author>
-    <preference name="android-minSdkVersion" value="26" />
+    <preference name="android-minSdkVersion" value="14" />
     <preference name="android-targetSdkVersion" value="26" />
-    <preference name="android-maxSdkVersion" value="26" />
 	<preference name="phonegap-version" value="cli-7.1.0" />	
     <content src="index.html" />
     <access origin="*" />
@@ -22,50 +21,50 @@
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
     <platform name="android">
-        <allow-intent href="market:*" />
-        <icon height="36" platform="android" src="res/icon/android/icon-36-ldpi.png" width="36" />
-        <icon height="48" platform="android" src="res/icon/android/icon-48-mdpi.png" width="48" />
-        <icon height="72" platform="android" src="res/icon/android/icon-72-hdpi.png" width="72" />
-        <icon height="96" platform="android" src="res/icon/android/icon-96-xhdpi.png" width="96" />
-        <icon height="76" platform="android" src="res/icon/android/icon-76.png" width="76" />
-        <icon height="120" platform="android" src="res/icon/android/icon-120.png" width="120" />
-        <icon height="152" platform="android" src="res/icon/android/icon-152.png" width="152" />
-        <icon height="1024" platform="android" src="res/icon/android/icon-1024.png" width="1024" />
+      <allow-intent href="market:*" />
+      <icon height="36" platform="android" src="res/icon/android/icon-36-ldpi.png" width="36" />
+      <icon height="48" platform="android" src="res/icon/android/icon-48-mdpi.png" width="48" />
+      <icon height="72" platform="android" src="res/icon/android/icon-72-hdpi.png" width="72" />
+      <icon height="96" platform="android" src="res/icon/android/icon-96-xhdpi.png" width="96" />
+      <icon height="76" platform="android" src="res/icon/android/icon-76.png" width="76" />
+      <icon height="120" platform="android" src="res/icon/android/icon-120.png" width="120" />
+      <icon height="152" platform="android" src="res/icon/android/icon-152.png" width="152" />
+      <icon height="1024" platform="android" src="res/icon/android/icon-1024.png" width="1024" />
     </platform>
     <platform name="ios">
-        <allow-intent href="itms:*" />
-        <allow-intent href="itms-apps:*" />
-		<icon src="res/icon/ios/icon.png" width="1024" height="1024" />		
-        <icon height="512" platform="ios" src="res/icon/ios/iTunesArtwork" width="512" />
-        <icon height="1024" platform="ios" src="res/icon/ios/iTunesArtwork@2x" width="1024" />
-        <icon height="29" platform="ios" src="res/icon/ios/Icon-Small.png" width="29" />
-        <icon height="58" platform="ios" src="res/icon/ios/Icon-Small@2x.png" width="58" />
-        <icon height="87" platform="ios" src="res/icon/ios/Icon-Small@3x.png" width="87" />
-        <icon height="40" platform="ios" src="res/icon/ios/Icon-Small-40.png" width="40" />
-        <icon height="80" platform="ios" src="res/icon/ios/Icon-Small-40@2x.png" width="80" />
-        <icon height="120" platform="ios" src="res/icon/ios/Icon-Small-40@3x.png" width="120" />
-        <icon height="76" platform="ios" src="res/icon/ios/Icon-76.png" width="76" />
-        <icon height="152" platform="ios" src="res/icon/ios/Icon-76@2x.png" width="152" />
-        <icon height="120" platform="ios" src="res/icon/ios/Icon-60@2x.png" width="120" />
-        <icon height="180" platform="ios" src="res/icon/ios/Icon-60@3x.png" width="180" />
-        <icon height="167" platform="ios" src="res/icon/ios/Icon-83.5@2x.png" width="167" />
-		
-		<icon height="57" platform="ios" src="res/icon/ios/icon-57.png" width="57" />
-		<icon height="50" platform="ios" src="res/icon/ios/icon-50.png" width="50" />
-		<icon height="72" platform="ios" src="res/icon/ios/icon-72.png" width="72" />
-		<icon height="100" platform="ios" src="res/icon/ios/icon-50@2x.png" width="100" />
-		<icon height="144" platform="ios" src="res/icon/ios/icon-72@2x.png" width="144" />
-		<icon height="114" platform="ios" src="res/icon/ios/icon@2x.png" width="114" />
-		
-		<splash width="640" height="960" src="res/screen/ios/Default@2x~iphone.png" />
-		<splash width="1024" height="768" src="res/screen/ios/Default-Landscape~ipad.png" />
-		<splash width="1080" height="1920" src="res/screen/ios/Default-736h.png" />
-		<splash width="1536" height="2048" src="res/screen/ios/Default-Portrait@2x~ipad.png" />
-		<splash width="640" height="1136" src="res/screen/ios/Default-568h@2x~iphone.png" />
-		<splash width="320" height="480" src="res/screen/ios/Default~iphone.png" />
-		<splash width="768" height="1024" src="res/screen/ios/Default-Portrait~ipad.png" />
-		<splash width="750" height="1334" src="res/screen/ios/Default-667h.png" />
-		<splash width="2048" height="1536" src="res/screen/ios/Default-Landscape@2x~ipad.png" />
+      <allow-intent href="itms:*" />
+      <allow-intent href="itms-apps:*" />
+      <icon src="res/icon/ios/icon.png" width="1024" height="1024" />		
+      <icon height="512" platform="ios" src="res/icon/ios/iTunesArtwork" width="512" />
+      <icon height="1024" platform="ios" src="res/icon/ios/iTunesArtwork@2x" width="1024" />
+      <icon height="29" platform="ios" src="res/icon/ios/Icon-Small.png" width="29" />
+      <icon height="58" platform="ios" src="res/icon/ios/Icon-Small@2x.png" width="58" />
+      <icon height="87" platform="ios" src="res/icon/ios/Icon-Small@3x.png" width="87" />
+      <icon height="40" platform="ios" src="res/icon/ios/Icon-Small-40.png" width="40" />
+      <icon height="80" platform="ios" src="res/icon/ios/Icon-Small-40@2x.png" width="80" />
+      <icon height="120" platform="ios" src="res/icon/ios/Icon-Small-40@3x.png" width="120" />
+      <icon height="76" platform="ios" src="res/icon/ios/Icon-76.png" width="76" />
+      <icon height="152" platform="ios" src="res/icon/ios/Icon-76@2x.png" width="152" />
+      <icon height="120" platform="ios" src="res/icon/ios/Icon-60@2x.png" width="120" />
+      <icon height="180" platform="ios" src="res/icon/ios/Icon-60@3x.png" width="180" />
+      <icon height="167" platform="ios" src="res/icon/ios/Icon-83.5@2x.png" width="167" />
+  
+      <icon height="57" platform="ios" src="res/icon/ios/icon-57.png" width="57" />
+      <icon height="50" platform="ios" src="res/icon/ios/icon-50.png" width="50" />
+      <icon height="72" platform="ios" src="res/icon/ios/icon-72.png" width="72" />
+      <icon height="100" platform="ios" src="res/icon/ios/icon-50@2x.png" width="100" />
+      <icon height="144" platform="ios" src="res/icon/ios/icon-72@2x.png" width="144" />
+      <icon height="114" platform="ios" src="res/icon/ios/icon@2x.png" width="114" />
+      
+      <splash width="640" height="960" src="res/screen/ios/Default@2x~iphone.png" />
+      <splash width="1024" height="768" src="res/screen/ios/Default-Landscape~ipad.png" />
+      <splash width="1080" height="1920" src="res/screen/ios/Default-736h.png" />
+      <splash width="1536" height="2048" src="res/screen/ios/Default-Portrait@2x~ipad.png" />
+      <splash width="640" height="1136" src="res/screen/ios/Default-568h@2x~iphone.png" />
+      <splash width="320" height="480" src="res/screen/ios/Default~iphone.png" />
+      <splash width="768" height="1024" src="res/screen/ios/Default-Portrait~ipad.png" />
+      <splash width="750" height="1334" src="res/screen/ios/Default-667h.png" />
+      <splash width="2048" height="1536" src="res/screen/ios/Default-Landscape@2x~ipad.png" />
     </platform>
     <plugin name="de.octogate.certlist" spec="https://github.com/fmenne/octogate-plugin-certlist.git" />
     <plugin name="cordova-plugin-inappbrowser" spec="^3.0.0" />
