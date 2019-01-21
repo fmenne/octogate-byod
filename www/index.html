@@ -97,6 +97,13 @@
     </form>
   </dialog>
 
+  <dialog id="byod_error">
+    <form method="dialog">
+      <p>Für diese Netzwerk ist kein BYOD konfiguriert. </p>
+      <p>Bitte wenden Sie sich an Ihren Administrator.</p>
+    </form>
+  </dialog>  
+
   <div class="pagewrapper" id="content">
     <header>
       <img src="img/logo.png">
@@ -110,6 +117,21 @@
         <label for="password">Passwort</label>
         <input type="password" id="password" name="password">
         <button id="login">Login</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="pagewrapper dialog-hidden" id="info-dialog">
+    <header>
+      <img src="img/logo.png">
+    </header>
+    <div class="widget-container">
+      <div class="info-dialog">
+        <div class="info-line"><span>App Version</span><span data-display="app_version">xx.xx.xxx</span></div>
+        <div class="info-line"><span>Cordova Version</span><span data-display="cordova_version">yy.yy.yyy</span></div>
+        <div class="info-line"><span>Gebaut am</span><span data-display="build_date">dd.mm.yyyy</span></div>
+        <div class="info-line"><span data-display="platform_name">Android Version</span><span data-display="platform_version">zz.zz.zzz</span></div>
+        <button id="close_info">Schließen</button>
       </div>
     </div>
   </div>
@@ -128,8 +150,17 @@
     </ul>
     <div class="content-wrapper">
       <ul id="side-menu">
-        <li><a href="https://get.teamviewer.com/t5fu5nv" target="_system"><img src="./img/TeamViewer_Logo_Icon_Only.png"
-              width="32" height="32"> TeamViewer Quickwartung</a></li>
+        <li>
+          <a href="https://get.teamviewer.com/t5fu5nv" target="_system">
+            <img src="./img/TeamViewer_Logo_Icon_Only.png" width="32" height="32"> TeamViewer Quickwartung
+          </a>
+        </li>
+        <li class="side-menu-seperator"></li>
+        <li>
+            <a href="#" id="info-menu">
+              <i class="fa fa-info icon"></i> Info
+            </a>
+          </li>        
       </ul>
       <div id="app-content">
         <div class="dark"></div>

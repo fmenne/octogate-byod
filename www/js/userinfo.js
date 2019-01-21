@@ -45,6 +45,10 @@ let UserInfo = {};
   }
 
   async function getUserInfo () {
+    if (!networkAdress) {
+      networkAdress = 'octo.octo';
+    }
+
     data = await fetch(`http://${networkAdress}:1983/index.pl?query=status`)
       .then((info) => info.json())
       .catch((e) => {
@@ -62,11 +66,12 @@ let UserInfo = {};
 
         return new Promise((resolve) => (resolver = resolve));
       });
-    // data = await info.json();
 
-    // alert (JSON.stringify(data));
+    if (!(data.username && data.profile_name)) {
+      var dialog = dialogFix(document.getElementById('byod_error'));
+      dialog.showModal();
+    }
 
-    // data = _data;
     return data;
   }
 

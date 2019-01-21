@@ -1,4 +1,3 @@
-
 var networkAdress = null;
 
 CheckList.addTask('check_wifi_ap', CheckList.E_TASK_TYPE.REQUIRED, "Prüfe Netzwerk", (done) => {
@@ -31,7 +30,7 @@ CheckList.addTask('check_wifi_ap', CheckList.E_TASK_TYPE.REQUIRED, "Prüfe Netzw
       done(false, 'network_invalid');
     }
   }, (error) => {
-     alert(error);
+    done(true, { result: 'network_valid', result_value: result });
   });
 });
 

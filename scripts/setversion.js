@@ -35,6 +35,4 @@ module.exports = function(ctx) {
 
   fs.writeFileSync(path.join(root, 'config.xml'), newXML);
   fs.writeFileSync(path.join(root, 'www', 'js', 'build.json'), JSON.stringify(info));
-
-  return Promise.reject();
 }

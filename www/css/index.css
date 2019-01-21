@@ -44,10 +44,9 @@ body {
 }
 
 .pagewrapper {
+  z-index: 10;
   padding: 10px;
-  /* width: 320px; */
   position: absolute;
-  /* height: 256px; */
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
@@ -103,6 +102,7 @@ body {
     box-shadow: 0 0px 4px 0px #2196F3
 }
 
+.info-dialog button,
 .login-form button {
   display: block;
   margin-top: 16px;
@@ -118,6 +118,20 @@ body {
 .login-form button:hover {
     outline: none;
     background: #51abf6;
+}
+
+.info-line {
+  padding: 4px;
+  display: flex;
+}
+
+.info-line.info-header {
+  font-weight: bolder;
+}
+
+.info-line > span:last-child {
+  flex-grow: 1;
+  text-align: right;
 }
 
 dialog {
@@ -440,6 +454,20 @@ div#app-content::-webkit-scrollbar {
   max-width: 400px;
   overflow: hidden;    
   list-style-type: none;
+  display: flex;
+  flex-direction: column;  
+}
+
+.side-menu-seperator {
+  flex-grow: 1;
+}
+
+#side-menu .icon {
+  font-size: 24px;
+  vertical-align: -2px;
+  width: 32px;
+  margin-right: 8px;
+  text-align: center;
 }
 
 #side-menu li a {
@@ -486,4 +514,9 @@ div#app-content::-webkit-scrollbar {
 
 .login-form.has-errors .login-error {
   display: block;
+}
+
+.dialog-hidden {
+  display: none;
+  opacity: 0;
 }

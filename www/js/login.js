@@ -8,6 +8,10 @@ let UserLogin = {};
     formData.append('pass', password);
     formData.append('toa', 'toa');
 
+    if (!networkAdress) {
+      networkAdress = 'octo.octo';
+    }
+
     let data = await fetch(`http://${networkAdress}:1983/index.pl?auto=1`, {
       body: formData,
       method: 'POST'
@@ -22,14 +26,6 @@ let UserLogin = {};
     let status = result.status || 'noentry';
 
     return status === 'active';
-
-    // console.log(doofOfConcept);
-
-    // let delayResolver = null;
-    // setTimeout(() => delayResolver(true), 2000);
-    // await (new Promise((resolve) => delayResolver = resolve));
-
-    // return doofOfConcept++ === 2;
   }
 
   async function render (previousChecks) {

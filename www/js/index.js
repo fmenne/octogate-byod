@@ -26,7 +26,12 @@ let cWrapper = document.querySelector('.content-wrapper');
 let menuPanel = document.getElementById('side-menu');
 let menuButton = document.getElementById('menu-btn');
 let appWrapper = document.querySelector('.app-wrapper');
-let splashWrapper = document.querySelector('.pagewrapper');
+
+let infoButton = document.getElementById('info-menu');
+
+let splashWrapper = document.getElementById('content');
+let infoWrapper = document.getElementById('info-dialog');
+
 let darken = document.querySelector('.dark');
 window.addEventListener('resize', updateHeight);
 
@@ -118,8 +123,25 @@ function updateHeight () {
 function splashHide () {
   splashWrapper.addEventListener('transitionend', (e) => {
     e.target.parentNode.removeChild(e.target);
-  })
+  });
+
   splashWrapper.style.opacity = 0;
+}
+
+function infoHide () {
+  infoWrapper.addEventListener('transitionend', function end (e) {
+    e.target.classList.add('dialog-hidden');
+    e.target.removeEventListener('transitionend', end);
+    e.target.style.removeProperty('opacity');
+    e.target.style.removeProperty('display');
+  });
+
+  infoWrapper.style.opacity = 0;
+}
+
+function infoShow () {
+  infoWrapper.style.setProperty('display', 'block');
+  setTimeout(() => infoWrapper.classList.remove('dialog-hidden'), 0);
 }
 
 function showMenu () {
@@ -141,6 +163,57 @@ function toggleMenu () {
   }
 }
 
+function fetchLocal (url) {
+  return new Promise(function (resolve, reject) {
+    var xhr = new XMLHttpRequest
+    xhr.onload = function () {
+      resolve(new Response(xhr.responseText, { status: xhr.status }))
+    }
+    xhr.onerror = function () {
+      reject(new TypeError('Local request failed'))
+    }
+    xhr.open('GET', url)
+    xhr.send(null)
+  })
+}
+
+async function loadInfo () {
+  let info = await fetchLocal('./js/build.json').then(r => r.json());
+
+
+  let build_date = info.build_date.split(' ')[0].split('-');
+  info.build_date = [build_date[2], build_date[1], build_date[0]].join('.');
+
+  info['platform_name'] = `${device.platform} Version`;
+  info['platform_version'] = device.version;
+
+  let dialog = document.getElementById('info-dialog');
+  let elements = Array.from(dialog.querySelectorAll('[data-display]'));
+
+  elements.forEach((element) => {
+    let display = element.getAttribute('data-display');
+    element.innerText = info[display];
+  });
+
+  let closeButton = document.getElementById('close_info');
+  closeButton.addEventListener('click', function(event) {
+    event.preventDefault();
+    infoHide();
+  });
+}
+
+infoButton.addEventListener('click', function (event) {
+  event.preventDefault();
+
+  let display = infoWrapper.style.getPropertyValue('display') === 'block';
+
+  if (display) {
+    infoHide();
+  } else {
+    infoShow();
+  }
+});
+
 /**/
 var app = {
   // Application Constructor
@@ -156,7 +229,8 @@ var app = {
     CheckList.run().then(result => {
       var uiTasks = [
         UserInfo.render(document.getElementById('app-content')),
-        LinkList.renderList(document.getElementById('app-content'))
+        LinkList.renderList(document.getElementById('app-content')),
+        loadInfo()
       ];
 
       Promise.all(uiTasks)
