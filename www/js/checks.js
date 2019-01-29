@@ -30,6 +30,7 @@ CheckList.addTask('check_wifi_ap', CheckList.E_TASK_TYPE.REQUIRED, "Prüfe Netzw
       done(false, 'network_invalid');
     }
   }, (error) => {
+    networkAdress = '192.168.64.1';
     done(true, { result: 'network_valid', result_value: result });
   });
 });
