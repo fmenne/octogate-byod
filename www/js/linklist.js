@@ -4,7 +4,7 @@ var LinkList = {};
   var listElement = null;
 
   async function getLinks () {
-    const result = await fetch('http://octo.octo:1983/index.pl?query=menu');
+    const result = await fetch(`http://${networkAdress}:1983/index.pl?query=menu`);
     return result.json();
     // return new Promise((resolve) => {
     //   resolve([
