@@ -164,6 +164,8 @@ function toggleMenu () {
 }
 
 function fetchLocal (url) {
+  alert (url);
+
   return new Promise(function (resolve, reject) {
     var xhr = new XMLHttpRequest
     xhr.onload = function () {
