@@ -7,7 +7,7 @@
     <author email="fwolbring@octogate.de" href="http://octogate.de">
         OctoGate IT Security Systems GmbH
     </author>
-    <preference name="android-minSdkVersion" value="19" />
+    <preference name="android-minSdkVersion" value="14" />
     <preference name="android-targetSdkVersion" value="26" />
     <preference name="phonegap-version" value="cli-7.1.0" />
     <content src="index.html" />
@@ -64,6 +64,7 @@
         <splash height="1334" src="res/screen/ios/Default-667h.png" width="750" />
         <splash height="1536" src="res/screen/ios/Default-Landscape@2x~ipad.png" width="2048" />
     </platform>
+    <engine name="android" spec="^7.1.1" />
     <plugin name="de.octogate.certlist" spec="https://github.com/fmenne/octogate-plugin-certlist.git" />
     <plugin name="cordova-plugin-inappbrowser" spec="^3.0.0" />
     <plugin name="cordova-wifi-info" spec="https://github.com/fwolle30/cordova-wifi-info.git" />
@@ -71,5 +72,4 @@
     <plugin name="cordova-plugin-whitelist" spec="^1.3.3" />
     <hook src="./scripts/setversion.js" type="before_build" />
     <plugin name="cordova-plugin-device" spec="^2.0.2" />
-    <engine name="android" spec="^7.1.1" />
 </widget>
