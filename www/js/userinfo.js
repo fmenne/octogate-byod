@@ -57,7 +57,8 @@ let UserInfo = {};
         var dialog = dialogFix(document.getElementById('interface_error'));
         dialog.onclose = function(e) {
           if (e.target.returnValue === "retry") {
-            resolver(getUserInfo())
+            // resolver(getUserInfo())
+            location.reload();
           } else {
             resolver({});
           }
