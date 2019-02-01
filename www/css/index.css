@@ -448,6 +448,7 @@ div#app-content::-webkit-scrollbar {
   width: 0;
   margin: 0;
   padding: 0;
+  height: 100vh;
   transition: width 400ms;
   flex-shrink: 0;
   background: #ebebeb;
@@ -455,7 +456,7 @@ div#app-content::-webkit-scrollbar {
   overflow: hidden;    
   list-style-type: none;
   display: flex;
-  flex-direction: column;  
+  flex-direction: column; 
 }
 
 .side-menu-seperator {
