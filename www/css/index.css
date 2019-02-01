@@ -448,7 +448,7 @@ div#app-content::-webkit-scrollbar {
   width: 0;
   margin: 0;
   padding: 0;
-  height: calc( 100vh - 58px );
+  height: calc( 100vh - 57px );
   transition: width 400ms;
   flex-shrink: 0;
   background: #ebebeb;
