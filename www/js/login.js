@@ -51,7 +51,11 @@ let UserLogin = {};
 
       doLogin(userName, userPassword).then((state) => {
         if (state) {
-          resolver(true);
+          if (!(data.username && data.profile_name)) {
+            resolver(false);
+          } else {
+            resolver(true);
+          }
         } else {
           resolver(false);
         }

@@ -68,10 +68,13 @@ let UserInfo = {};
         return new Promise((resolve) => (resolver = resolve));
       });
 
-    if (!(data.username && data.profile_name)) {
+    if (!data || Object.keys(data).length > 1) {
       var dialog = dialogFix(document.getElementById('byod_error'));
       dialog.showModal();
     }
+    // if (!(data.username && data.profile_name)) {
+
+    // }
 
     return data;
   }
