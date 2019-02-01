@@ -180,7 +180,7 @@ function fetchLocal (url) {
 }
 
 async function loadInfo () {
-  let info = {"build_date":"2019-01-30 13:53:13","cordova_version":"8.1.1","app_version":"1.1.10"};
+  let info = {"build_date":"2019-02-01 10:38:19","cordova_version":"8.1.1","app_version":"1.1.14"};
 
 
   let build_date = info.build_date.split(' ')[0].split('-');
